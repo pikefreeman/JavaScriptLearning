@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prevent Default Action</title>
+	<script type="text/javascript">
+		window.onload = function() {
+			var Go = document.getElementById('a1');
+			var NoGo = document.getElementById('a2');
+			function permitAccess() {
+				alert('Go right ahead - have fun!');
+			}
+			function refuseAccess(e) {
+				alert('Sorry, but you are not yet authorized to follow this link.');
+				e.preventDefault();
+			}
+			Go.addEventListener('click', permitAccess);
+			NoGo.addEventListener('click', refuseAccess);
+		}
+	</script>
+</head>
+<body>
+	<a href="https://www.baidu.com" target=_blank id="a1">Go to Baidu</a><br/>
+	<a href="https://www.baidu.com" target=_blank id="a2">DO NOT go to Baidu</a>
+</body>
+</html>
