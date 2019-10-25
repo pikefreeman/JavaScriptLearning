@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>What's the day today</title>
+	<script type="text/javascript">
+		function getday() {
+			var day = new Date();
+			var out = day.getDay();
+			alert(out);
+			var message = "";
+			switch (out) {
+				case 0 :
+					message = "Today is Sunday";
+					break;
+				case 1 :
+					message = "Today is Monday";
+					break;
+				case 2 :
+					message = "Today is Tuesday";
+					break;
+				case 3 :
+					message = "Today is Wednesday";
+					break;
+				case 4 :
+					message = "Today is Thursday";
+					break;
+				case 5 :
+					message = "Today is Friday";
+					break;
+				case 6 :
+					message = "Today is Saturday";
+					break;
+				default :
+					break;
+			}
+			alert(message);
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		getday();
+	</script>
+</body>
+</html>
