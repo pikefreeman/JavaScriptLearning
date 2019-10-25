@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spam Detector</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function detectSpam(input) {
+			input = input.toLowerCase();
+			if (input.indexOf("fake") < 0) {
+				return false;
+			}
+			return true;
+		}
+
+		var mystring = prompt("Enter a string");
+		alert(detectSpam(mystring));
+	</script>
+</body>
+</html>
