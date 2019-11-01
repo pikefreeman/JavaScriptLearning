@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Oriented Programming</title>
+	<script type="text/javascript">
+		/*function Person(personName) {
+			this.name = personName;
+			this.info = 'This person is called ' + this.name;
+			this.showinfo = function() {
+				alert(this.info);
+			}
+		}
+		var person1 = new Person('Adam');
+		var person2 = new Person('Eve');
+		Person.prototype.sayHello = function() {
+			alert(this.name + " says hello");
+		};*/
+		class Person {
+			constructor(personName) {
+				this.name = personName;
+				this.info = 'This person is called ' + this.name;
+			}
+			showinfo() {
+				alert(this.info);
+			}
+		}
+		class NewPerson extends Person {
+			constructor(name) {
+				super(name);
+			}
+			sayHello() {
+				alert(this.name + " says hello");
+			}
+		}
+		var person1 = new NewPerson('Adam');
+		var person2 = new NewPerson('Eve');
+	</script>
+</head>
+<body>
+	<input type="button" value="Show Info on Adam" onclick="person1.showinfo()" />
+	<input type="button" value="Show Info on Eve" onclick="person2.showinfo()" />
+	<input type="button" value="Say Hello Adam" onclick="person1.sayHello()" />
+	<input type="button" value="Say Hello Eve" onclick="person2.sayHello()" />
+</body>
+</html>

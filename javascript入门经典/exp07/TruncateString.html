@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TruncateString</title>
+	<script type="text/javascript">
+		function TruncString(string) {
+			if (string.length > 20) {
+				sub = string.substr(0, 20);
+				sub1 = sub.concat("...");
+			}
+			alert(sub1);
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		string = prompt("Enter a string: ");
+		TruncString(string);
+	</script>
+</body>
+</html>

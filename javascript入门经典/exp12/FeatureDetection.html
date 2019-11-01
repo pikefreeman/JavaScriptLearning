@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Feature Detection</title>
+	<script type="text/javascript">
+		window.onload = function () {
+			if(typeof Symbol == 'function') {
+				out = 'Your browser supports Symbols';
+			}
+			else {
+				out = 'Your brower has no Symbol support - upgrade!! (returned ' + typeof Symbol + ')';
+			}
+			document.getElementById('div1').innerHTML = out;
+		}
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>
