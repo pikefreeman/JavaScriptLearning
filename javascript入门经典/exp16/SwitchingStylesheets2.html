@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switching stylesheets with JavaScript</title>
+	<style type="text/css" title="sheet1">
+		body {
+			background-color: white;
+			color: red;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="sheet2.css" title="sheet2">
+	<!--<style type="text/css" title="sheet2">
+		body {
+			background-color: black;
+			color: yellow; 
+		}
+	</style>-->
+	<style type="text/css" title="sheet3">
+		body {
+			background-color: pink;
+			color: green;
+		}
+	</style>
+	<script type="text/javascript">
+		function ssEnable(mySheet) {
+			var change = false;
+			var oldSheet = 0;
+			for (var i = 0; i < document.styleSheets.length; i++) {
+				if (document.styleSheets[i].disabled == false) {
+					oldSheet = i;
+				}
+				document.styleSheets[i].disabled = true;
+				if (document.styleSheets[i].title == mySheet) {
+					document.styleSheets[i].disabled = false;
+					change = true;
+				}
+			}
+			if (!change) document.styleSheets[oldSheet].disabled = false;
+			return change;
+		}
+		function sheet() {
+			var sheetName = prompt("Stylesheet Name?");
+			if (!ssEnable(sheetName)) alert("Not found = original stylesheet retained.");
+		}
+		window.onload = function() {
+			document.getElementById("btn1").onclick = sheet;
+		}
+	</script>
+</head>
+<body>
+	Switch my stylesheet with the button below!<br />
+	<input type="button" id="btn1" value="Change Sheet" />	
+</body>
+</html>

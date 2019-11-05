@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Setting the style of page elements</title>
+	<style type="text/css">
+		span {
+			font-size: 16pt;
+			font-family: arial, helvetica, sans-serif;
+			padding: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		function toggle() {
+			var myElement = document.getElementById("id1");
+			if (myElement.style.backgroundColor == 'red') {
+				myElement.style.backgroundColor = 'yellow';
+				myElement.style.color = 'black';
+			} 
+			else {
+				myElement.style.backgroundColor = 'red';
+				myElement.style.color = 'white';
+			}
+		}
+		window.onload = function() {
+			document.getElementById("btn1").onclick = toggle;
+		}
+	</script>
+</head>
+<body>
+	<span id="id1">Welcome back to my site.</span>
+	<input type="button" id="btn1" value="Toggle" />
+</body>
+</html>
